@@ -32,6 +32,14 @@ export default withTheme(({ theme }: { theme: Theme }) => (
       ul {
         list-style: none;
       }
+
+      #root {
+        width: 100%;
+        max-width: 1280px;
+        position: relative;
+
+        margin: 0 auto;
+      }
     `}
   />
 ));
