@@ -3,13 +3,9 @@ import React from 'react';
 import { Global, css } from '@emotion/core';
 import { withTheme } from 'emotion-theming';
 
-import Theme from './theme';
+import { Theme } from './theme';
 
-interface WithThemeProps {
-  theme: typeof Theme;
-}
-
-export default withTheme(({ theme }: WithThemeProps) => (
+export default withTheme(({ theme }: { theme: Theme }) => (
   <Global
     styles={css`
       * {
@@ -26,6 +22,11 @@ export default withTheme(({ theme }: WithThemeProps) => (
 
       body {
         background: ${theme.colors.background};
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
       }
     `}
   />
