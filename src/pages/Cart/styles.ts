@@ -7,6 +7,27 @@ export const Container = styled.div`
   max-width: 640px;
 `;
 
+export const PokemonList = styled.ul`
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 2px solid ${({ theme }) => theme.colors.secondaryText};
+    border-radius: 4px;
+
+    padding: 24px;
+
+    img {
+      height: 96px;
+    }
+  }
+
+  li + li {
+    margin-top: 32px;
+  }
+`;
+
 export const FinishSection = styled.section`
   margin-top: 102px;
   padding: 24px 32px;

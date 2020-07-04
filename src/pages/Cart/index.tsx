@@ -4,14 +4,14 @@ import { useCart } from '../../hooks/cart';
 
 import formatPrice from '../../utils/formatPrice';
 
-import { Container, FinishSection } from './styles';
+import { Container, PokemonList, FinishSection } from './styles';
 
 const Cart: React.FC = () => {
   const { pokemonList, total } = useCart();
 
   return (
     <Container>
-      <ul>
+      <PokemonList>
         {pokemonList.map((pokemon) => (
           <li key={pokemon.id}>
             <img src={pokemon.imageURL} alt={pokemon.name} />
@@ -24,7 +24,7 @@ const Cart: React.FC = () => {
             </div>
           </li>
         ))}
-      </ul>
+      </PokemonList>
 
       <FinishSection>
         <p>

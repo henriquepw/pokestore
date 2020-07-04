@@ -23,7 +23,13 @@ interface Cart {
 const CartContext = createContext<Cart>({} as Cart);
 
 const CartProvider: React.FC = ({ children }) => {
-  const [pokemonList, setPokemonList] = useState<PokemonItem[]>([]);
+  const [pokemonList, setPokemonList] = useState<PokemonItem[]>(() => {
+    const pokemon = localStorage.getItem('@pokestore:pokemonList');
+
+    if (!pokemon) return [];
+
+    return JSON.parse(pokemon) || [];
+  });
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -32,6 +38,8 @@ const CartProvider: React.FC = ({ children }) => {
     }, 0);
 
     setTotal(newTotal);
+
+    localStorage.setItem('@pokestore:pokemonList', JSON.stringify(pokemonList));
   }, [pokemonList]);
 
   const addOnCart = useCallback((pokemon: PokemonItem) => {
