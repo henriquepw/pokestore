@@ -28,6 +28,10 @@ export default withTheme(({ theme }: { theme: Theme }) => (
       a {
         text-decoration: none;
       }
+
+      ul {
+        list-style: none;
+      }
     `}
   />
 ));

@@ -75,6 +75,7 @@
           "/^.*components/",
           "/^.*hooks/",
           "/^.*pages/",
+          "/^.*services/",
           "/^.*utils/",
           ["parent", "sibling", "index"],
           "/^.*assets/",
