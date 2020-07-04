@@ -1,11 +1,12 @@
 import React from 'react';
-import { withTheme } from 'emotion-theming';
-import { Global, css } from '@emotion/core';
 
-import theme from './theme';
+import { Global, css } from '@emotion/core';
+import { withTheme } from 'emotion-theming';
+
+import Theme from './theme';
 
 interface WithThemeProps {
-  theme: typeof theme;
+  theme: typeof Theme;
 }
 
 export default withTheme(({ theme }: WithThemeProps) => (

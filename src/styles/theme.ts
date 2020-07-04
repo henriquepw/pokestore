@@ -3,6 +3,6 @@ export default {
     background: '#3A234B',
     primaryText: '#FFFFFF',
     secondaryText: '#FEF003',
-    active:'#07FDCC',
+    active: '#07FDCC',
   },
 };

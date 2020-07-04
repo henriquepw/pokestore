@@ -1,13 +1,18 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import Layout from './components/Layout';
 
+import Routes from './routes';
+
 const App: React.FC = () => {
   return (
-    <Layout>
-      <h1>Hello</h1>
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <Routes />
+      </Layout>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

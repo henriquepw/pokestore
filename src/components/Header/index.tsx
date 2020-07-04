@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Container } from './styles';
-
 import logoImg from '../../assets/logo.png';
+
+import { Container } from './styles';
 
 const Header: React.FC = () => {
   return (
     <Container>
-      <img src={logoImg} />
+      <img src={logoImg} alt="Pokemon logo" />
     </Container>
   );
 };
