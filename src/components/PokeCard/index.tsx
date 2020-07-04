@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+
+import { useCart } from '../../hooks/cart';
 
 import { Container } from './styles';
 
@@ -22,12 +24,26 @@ function formattedPrice(price: number): string {
 }
 
 const PokeCard: React.FC<PokeCardProps> = ({ id, name, price, types }) => {
+  const { addOnCart } = useCart();
+
+  const imageURL = useMemo(
+    () => `https://pokeres.bastionbot.org/images/pokemon/${id}.png`,
+    [id],
+  );
+
+  function handleAddOnCart(): void {
+    addOnCart({
+      id,
+      name,
+      imageURL,
+      amount: 1,
+      price,
+    });
+  }
+
   return (
     <Container>
-      <img
-        src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
-        alt={name}
-      />
+      <img src={imageURL} alt={name} />
       <h1>{name}</h1>
       <ul>
         {types.map(({ type }) => (
@@ -37,10 +53,12 @@ const PokeCard: React.FC<PokeCardProps> = ({ id, name, price, types }) => {
 
       <div>
         <strong>{formattedPrice(price)}</strong>
-        <button type="button">Add to Cart</button>
+        <button type="button" onClick={handleAddOnCart}>
+          Add to Cart
+        </button>
       </div>
     </Container>
   );
 };
 
-export default PokeCard;
+export default React.memo(PokeCard);
