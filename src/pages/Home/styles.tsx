@@ -13,4 +13,5 @@ export const PokeList = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   grid-gap: 80px;
+  grid-row-gap: 128px;
 `;

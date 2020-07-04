@@ -2,22 +2,42 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const PokeCard: React.FC = () => {
+interface PokeCardProps {
+  id: string;
+  name: string;
+  price: number;
+  types: Array<{
+    type: {
+      url: string;
+      name: string;
+    };
+  }>;
+}
+
+function formattedPrice(price: number): string {
+  return Intl.NumberFormat('pt-br', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(price);
+}
+
+const PokeCard: React.FC<PokeCardProps> = ({ id, name, price, types }) => {
   return (
     <Container>
       <img
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-        alt="Bulbasaur"
+        src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
+        alt={name}
       />
-      <h1>Bulbasaur</h1>
+      <h1>{name}</h1>
       <ul>
-        <li>Gress</li>
-        <li>Poison</li>
+        {types.map(({ type }) => (
+          <li key={type.url}>{type.name}</li>
+        ))}
       </ul>
 
       <div>
-        <strong>R$ 69,00</strong>
-        <button type="button">Comprar</button>
+        <strong>{formattedPrice(price)}</strong>
+        <button type="button">Add to Cart</button>
       </div>
     </Container>
   );

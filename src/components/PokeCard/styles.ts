@@ -22,6 +22,8 @@ export const Container = styled.li`
   img {
     height: 136px;
     margin-top: -40%;
+
+    transition: transform 0.3s ease;
   }
 
   h1 {
@@ -29,6 +31,9 @@ export const Container = styled.li`
     letter-spacing: 0.1em;
     font-weight: normal;
     font-size: 1.75rem;
+
+    margin-top: 16px;
+    text-transform: capitalize;
   }
 
   ul,
@@ -40,6 +45,7 @@ export const Container = styled.li`
 
   ul {
     margin: 8px 0 24px;
+    text-transform: capitalize;
 
     li + li {
       margin-left: 32px;
@@ -55,6 +61,7 @@ export const Container = styled.li`
     font-weight: normal;
     font-size: 1.5rem;
     margin-right: 16px;
+    flex: 1;
   }
 
   button {
@@ -72,5 +79,9 @@ export const Container = styled.li`
   &:hover {
     border-color: ${({ theme }) => theme.colors.active};
     transform: translateY(-5px);
+
+    img {
+      transform: scale(1.1) translateY(-5px) translateZ(0);
+    }
   }
 `;
