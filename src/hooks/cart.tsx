@@ -18,6 +18,8 @@ interface Cart {
   pokemonList: PokemonItem[];
   total: number;
   addOnCart: (pokemon: PokemonItem) => void;
+  incrementPokemonAmount: (id: string) => void;
+  decrementPokemonAmount: (id: string) => void;
 }
 
 const CartContext = createContext<Cart>({} as Cart);
@@ -61,12 +63,48 @@ const CartProvider: React.FC = ({ children }) => {
     });
   }, []);
 
+  const incrementPokemonAmount = useCallback((id: string) => {
+    setPokemonList((state) => {
+      return state.map((item) => {
+        if (item.id !== id) return item;
+
+        return {
+          ...item,
+          amount: item.amount + 1,
+        };
+      });
+    });
+  }, []);
+
+  const decrementPokemonAmount = useCallback((id: string) => {
+    setPokemonList((state) => {
+      const findPokemon = state.find((item) => item.id === id);
+
+      if (!findPokemon) {
+        return state;
+      }
+
+      findPokemon.amount -= 1;
+
+      if (findPokemon.amount < 0) {
+        return state.filter((item) => item.id !== findPokemon.id);
+      }
+
+      return state.map((item) => {
+        if (item.id !== findPokemon.id) return item;
+        return findPokemon;
+      });
+    });
+  }, []);
+
   return (
     <CartContext.Provider
       value={{
         pokemonList,
         total,
         addOnCart,
+        incrementPokemonAmount,
+        decrementPokemonAmount,
       }}
     >
       {children}

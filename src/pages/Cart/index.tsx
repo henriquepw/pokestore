@@ -7,7 +7,12 @@ import formatPrice from '../../utils/formatPrice';
 import { Container, PokemonList, FinishSection } from './styles';
 
 const Cart: React.FC = () => {
-  const { pokemonList, total } = useCart();
+  const {
+    pokemonList,
+    total,
+    incrementPokemonAmount,
+    decrementPokemonAmount,
+  } = useCart();
 
   return (
     <Container>
@@ -18,9 +23,19 @@ const Cart: React.FC = () => {
             <p>{pokemon.name}</p>
 
             <div>
-              <button type="button">-</button>
+              <button
+                type="button"
+                onClick={() => decrementPokemonAmount(pokemon.id)}
+              >
+                -
+              </button>
               <span>{pokemon.amount}</span>
-              <button type="button">+</button>
+              <button
+                type="button"
+                onClick={() => incrementPokemonAmount(pokemon.id)}
+              >
+                +
+              </button>
             </div>
           </li>
         ))}
