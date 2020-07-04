@@ -2,6 +2,8 @@ import React, { useMemo } from 'react';
 
 import { useCart } from '../../hooks/cart';
 
+import formatPrice from '../../utils/formatPrice';
+
 import { Container } from './styles';
 
 interface PokeCardProps {
@@ -14,13 +16,6 @@ interface PokeCardProps {
       name: string;
     };
   }>;
-}
-
-function formattedPrice(price: number): string {
-  return Intl.NumberFormat('pt-br', {
-    style: 'currency',
-    currency: 'BRL',
-  }).format(price);
 }
 
 const PokeCard: React.FC<PokeCardProps> = ({ id, name, price, types }) => {
@@ -52,7 +47,7 @@ const PokeCard: React.FC<PokeCardProps> = ({ id, name, price, types }) => {
       </ul>
 
       <div>
-        <strong>{formattedPrice(price)}</strong>
+        <strong>{formatPrice(price)}</strong>
         <button type="button" onClick={handleAddOnCart}>
           Add to Cart
         </button>

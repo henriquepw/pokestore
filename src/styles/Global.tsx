@@ -33,6 +33,18 @@ export default withTheme(({ theme }: { theme: Theme }) => (
         list-style: none;
       }
 
+      button[type='button'] {
+        cursor: pointer;
+        font-size: 1rem;
+
+        flex: 1;
+        height: 36px;
+
+        border: 0;
+        border-radius: 4px;
+        background: ${theme.colors.active};
+      }
+
       #root {
         width: 100%;
         max-width: 1280px;

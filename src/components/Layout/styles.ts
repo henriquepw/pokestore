@@ -5,6 +5,8 @@ export const Background = styled.div`
   height: 100vh;
   position: absolute;
 
+  pointer-events: none;
+
   img {
     position: absolute;
     opacity: 0.3;

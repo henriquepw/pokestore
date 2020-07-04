@@ -32,7 +32,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     async function loadPokemon(): Promise<void> {
       const pokeList = await pokeAPI.get<GetPokemon>(
-        'pokemon?limit=10&offset=10',
+        'pokemon?limit=12&offset=0',
       );
 
       const getPokemon = await Promise.all(

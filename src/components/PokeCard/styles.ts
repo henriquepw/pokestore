@@ -64,18 +64,6 @@ export const Container = styled.li`
     flex: 1;
   }
 
-  button {
-    cursor: pointer;
-    font-size: 1rem;
-
-    flex: 1;
-    height: 36px;
-
-    border: 0;
-    border-radius: 4px;
-    background: ${({ theme }) => theme.colors.active};
-  }
-
   &:hover {
     border-color: ${({ theme }) => theme.colors.active};
     transform: translateY(-5px);

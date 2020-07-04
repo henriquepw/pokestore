@@ -19,7 +19,7 @@ const Header: React.FC = () => {
         <img src={logoImg} alt="Pokemon logo" />
       </Link>
 
-      <CartButton to="/">
+      <CartButton to="/cart">
         <FaShoppingCart size={24} />
         Cart
         <span>{itemCount}</span>
