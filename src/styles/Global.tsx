@@ -1,18 +1,31 @@
 import React from 'react';
-import { Global, css } from '@emotion/core'
+import { withTheme } from 'emotion-theming';
+import { Global, css } from '@emotion/core';
 
+import theme from './theme';
 
-const globalStyles = css`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+interface WithThemeProps {
+  theme: typeof theme;
+}
 
-  body, input, button {
-    font-family: 'VT323', monospace;
-  }
-`;
+export default withTheme(({ theme }: WithThemeProps) => (
+  <Global
+    styles={css`
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-export default () => <Global styles={globalStyles} />;
+      body,
+      input,
+      button {
+        font-family: 'VT323', monospace;
+      }
 
+      body {
+        background: ${theme.colors.background};
+      }
+    `}
+  />
+));
