@@ -60,6 +60,7 @@ export default withTheme(({ theme }: { theme: Theme }) => (
       #root {
         width: 100%;
         max-width: 1280px;
+        min-height: 100vh;
         position: relative;
 
         margin: 0 auto;

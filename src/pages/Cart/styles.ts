@@ -1,3 +1,5 @@
+import { css } from '@emotion/core';
+
 import styled from '../../styles/styled';
 
 export const Container = styled.div`
@@ -13,6 +15,22 @@ export const PokemonList = styled.ul`
 
   li + li {
     margin-top: 32px;
+  }
+`;
+
+export const NoItemSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: ${({ theme }) => theme.colors.primaryText};
+
+  h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+
+    margin: 24px 0 -40px;
   }
 `;
 
@@ -38,12 +56,22 @@ export const FinishSection = styled.section`
     font-weight: normal;
     color: ${({ theme }) => theme.colors.secondaryText};
   }
+`;
 
-  button {
-    width: 100%;
-    margin-top: 24px;
+export const CheckoutButton = styled.button`
+  width: 100%;
+  margin-top: 24px;
 
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  &:disabled {
+    background: ${({ theme }) => theme.colors.disabled};
+    color: ${({ theme }) => theme.colors.primaryText};
+
+    &:hover {
+      background: ${({ theme }) => theme.colors.disabled};
+      transform: translateZ(0);
+    }
   }
 `;
