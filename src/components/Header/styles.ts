@@ -44,10 +44,11 @@ export const Container = styled.header`
 
 export const CartButton = styled(Link)`
   display: flex;
-
   align-items: center;
-  color: ${({ theme }) => theme.colors.primaryText};
+
   font-size: 1.5rem;
+  color: ${({ theme }) => theme.colors.primaryText};
+  transition: color 0.2s;
 
   svg {
     margin-right: 16px;
@@ -58,14 +59,23 @@ export const CartButton = styled(Link)`
     align-items: center;
     justify-content: center;
 
-    background: ${({ theme }) => theme.colors.active};
-    color: ${({ theme }) => theme.colors.background};
-    font-size: 1rem;
-
     width: 24px;
     height: 24px;
 
     border-radius: 4px;
     margin-left: 16px;
+
+    font-size: 1rem;
+    background: ${({ theme }) => theme.colors.active};
+    color: ${({ theme }) => theme.colors.background};
+    transition: background 0.2s;
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.secondaryText};
+
+    span {
+      background: ${({ theme }) => theme.colors.secondaryText};
+    }
   }
 `;

@@ -9,7 +9,7 @@ export const Container = styled.li`
   color: ${({ theme }) => theme.colors.primaryText};
 
   width: 100%;
-  max-width: 224px;
+  max-width: 248px;
   margin: auto;
   padding: 16px;
 
