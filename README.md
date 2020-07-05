@@ -1,44 +1,113 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img alt="Your icon here" src="./src/assets/logo.png" heigth="80"/>
+</p>
+<h1 align="center">
+  PokeStore
+</h1>
 
-## Available Scripts
+<!-- Badges -->
+<p align="center">
+  <a href="https://github.com/henry-ns/pokestore/graphs/commit-activity" alt="Maintenance">
+    <img src="https://img.shields.io/badge/Maintained%3F-yes-1EAE72.svg" />
+  </a>
 
-In the project directory, you can run:
+  <!-- if your app is a website -->
+  <a href="https://pokeloja.netlify.app/" alt="Website pokeloja.netlify.app">
+    <img src="https://img.shields.io/website-up-down-1EAE72-red/https/pokeloja.netlify.app/" />
+  </a>
 
-### `yarn start`
+  <!-- License -->
+  <a href="./LICENSE" alt="License: MIT">
+    <img src="https://img.shields.io/badge/License-MIT-1EAE72.svg" />
+  </a>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <!-- codefactor -->
+  <a href="https://www.codefactor.io/repository/github/henry-ns/pokestore" alt="CodeFactor">
+    <img src="https://www.codefactor.io/repository/github/henry-ns/pokestore/badge" />
+  </a>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  <!-- if your app is a website deployed on Netlify -->
+  <a href="https://app.netlify.com/sites/pokeloja/deploys" alt="Netlify Status">
+    <img src="https://api.netlify.com/api/v1/badges/<netplify-id>/deploy-status" />
+  </a>
 
-### `yarn test`
+  <br/>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/henry-ns/pokestore?color=blue">
 
-### `yarn build`
+  <!-- version -->
+  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/henry-ns/pokestore">
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  <!-- GitHub repo size -->
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/henry-ns/pokestore">
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  <!-- Social -->
+  <a href="https://github.com/henry-ns/pokestore/stargazers">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/henry-ns/pokestore?style=social">
+  </a>
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- summary -->
+<p align="center">
+  <a href="#clipboard-description">Description</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-getting-started">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-whats-inside">What's inside?</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
+</p>
 
-### `yarn eject`
+> under construction...
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## :clipboard: Description
+**Hiring coders challenge**, [VTEX](https://vtex.com/) project in partnership with [Gama Academy](https://gama.academy/). Challenge to create a Pokemon store using ReactJS.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## :rocket: Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Download the repository
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  - Using Git
+```shell
+  git clone https://github.com/henry-ns/pokestore.git
+```
+  - Using Github CLI
+```shell
+  gh repo clone henry-ns/pokestore
+```
+  > :bulb: or whichever way you prefer
 
-## Learn More
+2. Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Execution
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## 🧐 What's inside?
+
+### :building_construction: Technologies
+- [ReactJS](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+
+### :lipstick: Linter tools
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [EditorConfig](https://editorconfig.org/)
+
+
+### :package: Packages
+
+| Function             | Library                                                            |
+| -------------------- | ------------------------------------------------------------------ |
+| Font                 | [V323](https://fonts.google.com/specimen/VT323)                    |
+| Icons                | [React Icons](https://react-icons.netlify.com/#/)                  |
+| CSS in JS            | [Emotion](https://emotion.sh/docs/introduction)                    |
+| colours manipulation | [Polished](https://polished.js.org/)                               |
+| Routes               | [React Router DOM](https://reactrouter.com/web/guides/quick-start) |
+
+
+## :memo: License
+
+This project is under the MIT license. See the file [LICENSE](LICENSE) for more details.
+
+---
+
+Build with 💙 By [Henrique Miranda](https://thehenry.dev)
+
