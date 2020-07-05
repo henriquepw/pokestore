@@ -1,3 +1,5 @@
+import { opacify } from 'polished';
+
 import styled from '../../styles/styled';
 
 export const Container = styled.div`
@@ -6,6 +8,10 @@ export const Container = styled.div`
 
   width: 100%;
   max-width: 640px;
+
+  @media (max-width: 520px) {
+    max-width: 350px;
+  }
 `;
 
 export const PokemonList = styled.ul`
@@ -13,6 +19,10 @@ export const PokemonList = styled.ul`
 
   li + li {
     margin-top: 32px;
+  }
+
+  @media (max-width: 520px) {
+    margin-top: 64px;
   }
 `;
 
@@ -29,6 +39,10 @@ export const NoItemSection = styled.section`
     text-align: center;
 
     margin: 24px 0 -40px;
+
+    @media (max-width: 520px) {
+      font-size: 1.75rem;
+    }
   }
 `;
 
@@ -37,8 +51,13 @@ export const FinishSection = styled.section`
   padding: 24px 32px;
 
   color: ${({ theme }) => theme.colors.primaryText};
+  background: ${({ theme }) => opacify(-0.4, theme.colors.background)};
   border: 1px solid ${({ theme }) => theme.colors.secondaryText};
   border-radius: 4px;
+
+  @media (max-width: 520px) {
+    margin-top: 64px;
+  }
 
   p {
     display: flex;

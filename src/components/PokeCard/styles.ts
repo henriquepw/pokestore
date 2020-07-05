@@ -1,3 +1,5 @@
+import { opacify } from 'polished';
+
 import styled from '../../styles/styled';
 
 export const Container = styled.li`
@@ -7,6 +9,7 @@ export const Container = styled.li`
   justify-content: center;
 
   color: ${({ theme }) => theme.colors.primaryText};
+  background: ${({ theme }) => opacify(-0.4, theme.colors.background)};
 
   width: 100%;
   max-width: 248px;

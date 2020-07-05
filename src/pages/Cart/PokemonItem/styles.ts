@@ -1,4 +1,4 @@
-import { darken } from 'polished';
+import { darken, opacify } from 'polished';
 
 import styled from '../../../styles/styled';
 
@@ -9,6 +9,7 @@ export const Container = styled.li`
 
   font-size: 2rem;
   color: ${({ theme }) => theme.colors.active};
+  background: ${({ theme }) => opacify(-0.4, theme.colors.background)};
 
   border: 2px solid ${({ theme }) => theme.colors.secondaryText};
   border-radius: 4px;
@@ -53,6 +54,26 @@ export const Container = styled.li`
         background: ${({ theme }) => theme.colors.secondaryText};
         transform: scale(1) translateZ(0);
       }
+    }
+  }
+
+  @media (max-width: 520px) {
+    display: grid;
+    grid-template-columns: auto auto;
+    marign: auto;
+
+    font-size: 1.5rem;
+
+    img {
+      grid-column: 1;
+      grid-row: 1/3;
+    }
+
+    div {
+      grid-column: 2;
+
+      margin: auto;
+      margin-left: 24px;
     }
   }
 `;
