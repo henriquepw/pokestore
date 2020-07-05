@@ -81,26 +81,29 @@ const CartProvider: React.FC = ({ children }) => {
     });
   }, []);
 
-  const decrementPokemonAmount = useCallback((id: string) => {
-    setPokemonList((state) => {
-      const findPokemon = state.find((item) => item.id === id);
+  const decrementPokemonAmount = useCallback(
+    (id: string) => {
+      const findPokemon = pokemonList.find((item) => item.id === id);
 
-      if (!findPokemon) {
-        return state;
-      }
+      if (!findPokemon) return;
 
       findPokemon.amount -= 1;
 
-      if (findPokemon.amount < 0) {
-        return state.filter((item) => item.id !== findPokemon.id);
+      if (findPokemon.amount <= 0) {
+        setPokemonList(pokemonList.filter((item) => item.id !== id));
+        return;
       }
 
-      return state.map((item) => {
-        if (item.id !== findPokemon.id) return item;
-        return findPokemon;
-      });
-    });
-  }, []);
+      setPokemonList(
+        pokemonList.map((item) => {
+          if (item.id !== id) return item;
+
+          return findPokemon;
+        }),
+      );
+    },
+    [pokemonList],
+  );
 
   return (
     <CartContext.Provider

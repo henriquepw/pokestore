@@ -17,16 +17,16 @@ import {
 } from './styles';
 
 const Cart: React.FC = () => {
-  const { pokemonList, total, buy } = useCart();
   const history = useHistory();
+  const { pokemonList, total, buy } = useCart();
+
+  const isDisabled = pokemonList.length === 0;
 
   function handleOnCheckout(): void {
     buy();
 
     history.push('/cart/approved');
   }
-
-  const isDisabled = pokemonList.length === 0;
 
   return (
     <Container>
