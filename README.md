@@ -12,8 +12,8 @@
   </a>
 
   <!-- if your app is a website -->
-  <a href="https://pokeloja.netlify.app/" alt="Website pokeloja.netlify.app">
-    <img src="https://img.shields.io/website-up-down-1EAE72-red/https/pokeloja.netlify.app/" />
+  <a href="https://pokestore.thehenry.dev/" alt="Website pokeloja.netlify.app">
+    <img src="https://img.shields.io/website-up-down-1EAE72-red/https/pokestore.thehenry.dev/" />
   </a>
 
   <!-- License -->
@@ -28,7 +28,7 @@
 
   <!-- if your app is a website deployed on Netlify -->
   <a href="https://app.netlify.com/sites/pokeloja/deploys" alt="Netlify Status">
-    <img src="https://api.netlify.com/api/v1/badges/<netplify-id>/deploy-status" />
+    <img src="https://api.netlify.com/api/v1/badges/167221cd-bdfb-4091-a7b0-5275852bd92d/deploy-status" />
   </a>
 
   <br/>
@@ -76,7 +76,13 @@
 
 2. Installation
 
+Inside the repo folder, run `yarn` or `npm install` command to install the dependencies.
+
 3. Execution
+
+run `yarn start` or `npm start` command to start a local server and get a test! :rocket:
+
+> :bulb: If you use another package manager, run the reference commands for install the dependencies and execute the start script on package.json
 
 
 ## 🧐 What's inside?
