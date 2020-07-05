@@ -17,6 +17,7 @@ interface PokemonItem {
 interface Cart {
   pokemonList: PokemonItem[];
   total: number;
+  buy: () => void;
   addOnCart: (pokemon: PokemonItem) => void;
   incrementPokemonAmount: (id: string) => void;
   decrementPokemonAmount: (id: string) => void;
@@ -63,6 +64,10 @@ const CartProvider: React.FC = ({ children }) => {
     });
   }, []);
 
+  const buy = useCallback(() => {
+    setPokemonList([]);
+  }, []);
+
   const incrementPokemonAmount = useCallback((id: string) => {
     setPokemonList((state) => {
       return state.map((item) => {
@@ -103,6 +108,7 @@ const CartProvider: React.FC = ({ children }) => {
         pokemonList,
         total,
         addOnCart,
+        buy,
         incrementPokemonAmount,
         decrementPokemonAmount,
       }}
