@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Global, css } from '@emotion/core';
 import { withTheme } from 'emotion-theming';
+import { darken } from 'polished';
 
 import { Theme } from './theme';
 
@@ -43,6 +44,17 @@ export default withTheme(({ theme }: { theme: Theme }) => (
         border: 0;
         border-radius: 4px;
         background: ${theme.colors.active};
+        transition: background 0.2s, transform 0.2s;
+
+        &:hover {
+          background: ${darken(0.05, theme.colors.active)};
+          transform: scale(1.02) translateZ(0);
+        }
+
+        &:active {
+          background: ${theme.colors.active};
+          transform: scale(1) translateZ(0);
+        }
       }
 
       #root {

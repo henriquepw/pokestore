@@ -1,3 +1,5 @@
+import { darken } from 'polished';
+
 import styled from '../../styles/styled';
 
 export const Container = styled.div`
@@ -51,6 +53,17 @@ export const PokemonList = styled.ul`
         height: 24px;
         font-size: 1.125rem;
         background: ${({ theme }) => theme.colors.secondaryText};
+
+        &:hover {
+          background: ${({ theme }) =>
+            darken(0.05, theme.colors.secondaryText)};
+          transform: scale(1.1) translateZ(0);
+        }
+
+        &:active {
+          background: ${({ theme }) => theme.colors.secondaryText};
+          transform: scale(1) translateZ(0);
+        }
       }
     }
   }
